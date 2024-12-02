@@ -6,7 +6,7 @@
   # TODO how to use scylla_manager_db_vars to be passed on as role params?
     install_only: True
     scylla_manager_enabled: false
-    scylla_version: 'latest'
+    scylla_version: "{{ scylla_manager_db_vars.scylla_version|default('latest') }}"
     scylla_edition: "{{ scylla_manager_db_vars.scylla_edition|default('oss') }}"
     elrepo_kernel: false
     scylla_repo_keyserver: "{{ scylla_manager_db_vars.scylla_repo_keyserver|default('') }}"
